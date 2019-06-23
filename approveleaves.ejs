@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="approveleaves.css">
+</head>
+<body>
+
+    <div class="header" id="myHeader">
+        <h1>Leave Management System</h1>
+    </div>
+
+    <div class="nav">
+
+    <ul>
+        <li>
+            <div class="img">
+                <img src="myaccount.png" alt="Profile Picture" height="60" width="60">
+            </div>
+        </li>
+        <li><a href="/dashboard_faculty">Dashboard</a></li>
+        <li><a href="/approveleaves">Approve Leave</a></li>
+        <li><a href="apply_page_faculty.html">Apply for Leave</a><li>
+        <li><a href="/history_faculty">Leave History</a></li>
+        <li><a href="change_faculty.html">Change Password</a></li>
+        <li><a href="login.html">Sign Out</a></li>
+    </ul>
+
+    </div>
+
+    <div class="content">
+    	<center>
+    		<h2>Pending Leave Applications</h2>
+			<table style="margin-top:50px; margin-bottom:50px">
+                <tr>
+                	<td>Student Id</td>
+                    <td>Leave Type</td>
+                    <td>Duration</td>
+                    <td>Start Date</td>
+                    <td>End Date</td>
+                    <td>Reason</td>
+                    <td>Leave Address</td>
+                </tr>
+    
+                <%
+                    for(var i = 0; i < pending.length; i++) { %>
+                        <tr>
+                        	<td><%=pending[i].id%></td>
+                            <td><%=pending[i].leave_type%></td>
+                            <td><%=pending[i].duration%></td>
+                            <td><%=pending[i].s_date%></td>
+                            <td><%=pending[i].e_date%></td>
+                            <td><%=pending[i].reason%></td>
+                            <td><%=pending[i].leave_address%></td>
+                        </tr>
+                <% } %>
+            </table>
+            
+            <form action='/approve' method='POST'>
+            	<center>
+            		<table>
+            			<tr>
+            				<td><label for "usrnm">Enter username</label></td>
+            				<td><input type="text" name="usrnm"></td>
+            			</tr>
+            			<tr>
+            				<td><label for "l_type">Select leave type</label></td>
+            				<td><select name="l_type">
+                        		<option label="CL">CL</option>
+                        		<option label="ML">ML</option>
+                        		<option label="EL">EL</option>
+                        		<option label="CD">CD</option>
+                        		<option label="C Off">C Off</option>
+                        		<option label="Other">Other</option>
+                        		</select>
+                    		</td>
+            			</tr>
+            			<tr>
+            				<td>
+            					<center>
+            					<input name="sub_mit" type="submit" value="Approve" style="width:90px; text-align:center;">
+            					</center>
+            				</td>
+            				<td>
+            					<center>
+            					<input name="sub_mit" type="submit" value="Disapprove" style="width:90px; text-align:center;">
+            					</center>
+            				</td>
+            			</tr>
+            		</table>
+            	</center>
+            </form>
+            
+            
+		</center>
+    </div>
+    
+</body>
+</html>
+

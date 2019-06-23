@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <link rel="stylesheet" type="text/css" href="history.css">
+
+</head>
+
+<body>
+
+    <div class="header" id="myHeader">
+        <h1>Leave Management System</h1>
+    </div>
+
+    <div class="nav">
+
+    <ul>
+        <li>
+            <div class="img">
+                <img src="myaccount.png" alt="Profile Picture" height="60" width="60">
+            </div>
+        </li>
+        <li><a href="/dashboard_student">Dashboard</a></li>
+        <li><a href="apply_page_student.html">Apply for Leave</a></li>
+        <li><a href="/history_student">Leave History</a></li>
+        <li><a href="change_student.html">Change Password</a></li>
+        <li><a href="login.html">Sign Out</a></li>
+    </ul>
+
+    </div>
+
+    <div class="content">
+        <h2 id = "leaveheading" class = "pageheading">Leave History</h2>
+        	<center>
+			<table>
+                <tr>
+                    <td>Leave Type</td>
+                    <td>Duration</td>
+                    <td>Start Date</td>
+                    <td>End Date</td>
+                    <td>Reason</td>
+                    <td>Leave Address</td>
+                    <td>Status</td>
+                </tr>
+    
+                <%
+    
+                    for(var i = 0; i < leaves.length; i++) { %>
+                        <tr>
+                            <td><%=leaves[i].leave_type%></td>
+                            <td><%=leaves[i].duration%></td>
+                            <td><%=leaves[i].s_date%></td>
+                            <td><%=leaves[i].e_date%></td>
+                            <td><%=leaves[i].reason%></td>
+                            <td><%=leaves[i].leave_address%></td>
+                            <td><%=leaves[i].status%></td>
+                            <!--<td><button class = "button">Edit</button></td>
+                            <td><button>Cancel</button> </td>-->
+                        </tr>
+    
+                <% } %>
+            </table>
+            </center>   
+    </div>    
+
+</body>
+</html>

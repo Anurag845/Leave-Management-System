@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <link rel="stylesheet" type="text/css" href="nav.css">
+ <script type="text/javascript" src="changescript.js" ></script>
+
+</head>
+
+<body>
+
+    <div class="header" id="myHeader">
+        <h1>Leave Management System</h1>
+    </div>
+
+    <div class="nav">
+
+    <ul>
+        <li>
+            <div class="img">
+                <img src="myaccount.png" alt="Profile Picture" height="80" width="80">
+            </div>
+        </li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="apply_page.html">Apply for Leave</a></li>
+        <li><a href="history.html">Leave History</a></li>
+        <li><a href="change.html">Change Password</a></li>
+        <li><a href="#signout">Sign Out</a></li>
+    </ul>
+
+    </div>
+    <center>
+    <div class="content"> 
+
+     <div class="container">
+        <h2>Approve Leave</h2>
+    <div class="panel-group" id="accordion">
+    
+    <%
+        var arr = [];
+        for (var i=0; i < pending.length; i++)
+        {
+            arr[i] = 'collapse' + i;
+        }
+        arr[i+1]="";
+    %>
+    <%
+    for (var i=0; i < pending.length; i++)
+    {
+    %> 
+     <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion">Leave for <%=pending[i].username%></a>
+        </h4>
+      </div>
+      <div  class="panel-collapse collapse in">
+        <div class="panel-body">
+            <table>
+                <tr>
+                    <th>Leave type: <%=pending[i].leave_type%></th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Start date:<%=pending[i].s_date%> </th>
+                    <td></td>
+                    <th>End date: <%=pending[i].e_date%></th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Reason: <%=pending[i].reason%></th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Approve" id="approve"></td>
+                    <td><input type="submit" value="Reject" id="reject" ></td>
+                </tr>
+            </table>
+        </div>
+      </div>
+    <% } %>
+    
+  </div>    
+  </div> 
+</div> 
+    </div>
+    </center>
+
+</body>
+</html>

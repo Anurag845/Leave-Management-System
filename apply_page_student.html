@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <link rel="stylesheet" type="text/css" href="apply_page.css">
+
+</head>
+
+<body>
+
+    <div class="header" id="myHeader">
+        <h1>Leave Management System</h1>
+    </div>
+
+    <div class="nav">
+
+    <ul>
+        <li>
+            <div class="img">
+                <img src="myaccount.png" alt="Profile Picture" height="60" width="60">
+            </div>
+        </li>
+        <li><a href="/dashboard_student">Dashboard</a></li>
+        <li><a href="apply_page_student.html">Apply for Leave</a></li>
+        <li><a href="/history_student">Leave History</a></li>
+        <li><a href="change_student.html">Change Password</a></li>
+        <li><a href="login.html">Sign Out</a></li>
+    </ul>
+
+    </div>
+
+    <div class="content">
+
+        <h2 style="text-align:center;">Apply For Leave</h2>
+        <form action="/apply_action" method="POST" onsubmit="return validate();">
+            <table>
+                <tr>
+                    <td class="left_element">Select Type of Leave</td>
+                    <td class="right_element"><select name="type_of_leave" id="type_of_leave">
+                        <option label="CL">CL</option>
+                        <option label="ML">ML</option>
+                        <option label="EL">EL</option>
+                        <option label="CD">CD</option>
+                        <option label="C Off">C Off</option>
+                        <option label="Other">Other</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left_element">Select Duration of Leave</td>
+                    <td class="right_element"><select name="duration" id="duration">
+                        <option label="Select duration" value="">Select Duration</option>
+                        <option label="Half Day" value="half_day">Half Day</option>
+                        <option label="Full Day" value="full_day">Full Day</option>
+                        <option label="More than one day" value="more_day">More than one Day</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left_element">Select Start Date</td>
+                    <td class="right_element"><input id="s_date" name="s_date" type="date" onchange="setEndDate()"></td>
+                </tr>
+
+                <tr>
+                    <td class="left_element">Select End Date</td>
+                    <td class="right_element"><input id="e_date" name="e_date" type="date"></td>
+                </tr>
+
+                <tr>
+                    <td class="left_element">Reason for leave</td>
+                    <td class="right_element"><textarea name="reason" id="reason" rows="5"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td class="left_element">Leave Phone Number</td>
+                    <td class="right_element"><input name="phone" id="phone" type="number"></td>
+                </tr>
+
+                <tr>
+                    <td class="left_element">Leave Address</td>
+                    <td class="right_element"><textarea name="address" id="address" rows="3"></textarea></td>
+                </tr>
+
+            </table>
+
+            <center>
+            	<input type="reset" value="Reset" style="width:30%; padding:5px;">
+            	<input type="submit" value="Apply" style="width:30%; padding:5px;">
+            </center>
+        </form>
+    </div>    
+
+</body>
+<script>
+
+	function disableEnd() {
+		var selDuration = document.getElementById('duration').value;
+		if(selDuration == "half_day" || selDuration == "full_day") {
+			document.getElementById('e_date').disabled = true;
+		}
+		else {
+			document.getElementById('e_date').disabled = false;
+		}
+	}
+	
+	function setEndDate() {
+		var date1 = document.getElementById('s_date');
+        var dateSplit = date1.value.split("-");
+        dateSplit[0] = parseInt(dateSplit[0]);
+        dateSplit[0] = dateSplit[0].toString();
+        var date2 = document.getElementById('e_date').value = dateSplit[0] + "-" + dateSplit[1] + "-" + dateSplit[2];
+	}
+	
+	function validate() {
+		var type_leave = document.getElementById("type_of_leave").value;
+		var duration = document.getElementById("duration").value;
+		var s_date = document.getElementById("s_date").value;
+		var e_date = document.getElementById("e_date").value;
+		var reason = document.getElementById("reason").value;
+		var phone = document.getElementById("phone").value;
+		var address = document.getElementById("address").value;
+		
+		if(type_leave == "" || duration == "" || s_date == "" || e_date == "" || reason == "" || phone == "" || address == "") {
+			alert("All fields are mandatory");
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+	
+</script>
+</html>

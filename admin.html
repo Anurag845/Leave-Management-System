@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <link rel="stylesheet" type="text/css" href="admin.css">
+
+</head>
+
+<body>
+
+    <div class="header" id="myHeader">
+        <h1>Leave Management System</h1>
+    </div>
+
+    <div class="nav">
+
+    <ul>
+        <li>
+            <div class="img">
+                <img src="myaccount.png" alt="Profile Picture" height="80" width="80">
+            </div>
+        </li>
+        <li><a href="admin.html">Add</a></li>
+        <li><a href="adminremove.html">Remove</a></li>
+        <li><a href="login.html">Sign Out</a></li>
+    </ul>
+
+    </div>
+
+
+<div class="content">
+<center>
+<input type="radio" name="type" id="stud" value="Student" checked>Student<input type="radio" name="type" id="fac" value="Faculty">Faculty
+
+<br><br>
+<!-- Add faculty/Student-->
+<form id="Studform" action="addnewstud" method="POST">
+    <fieldset >
+    <table>
+        <tr>
+        <th>Username</th><td><input type="text" id="username" name="username"></td>
+        </tr>
+        <tr>
+        <th>Password</th><td><input type="text" id="password" name="password"></td>
+        </tr>
+        <tr>
+        <th>Email</th><td><input type="text" id="email" name="email"></td>
+        </tr>
+        <tr>
+        <th>Age</th><td><input type="text" id="age" name="age"></td>
+        </tr>
+        <tr>
+        <th>Contact number</th><td><input type="text" id="contact" name="contact"></td>
+        </tr>
+        <tr>
+        <th>Department</th><td><input type="text" id="dept" name="dept"></td>
+        </tr>
+        <tr>
+        <th>Year</th><td><input type="text" id="year" name="year"></td>
+        </tr>
+        <tr>
+        <th>Division</th><td><input type="text" id="div" name="div"></td>
+        </tr>
+        <tr>
+        <th>Roll number</th><td><input type="text" id="roll" name="roll"></td>
+        </tr>
+        <tr>
+        <th></th><td><input type="submit" value="Add" id="submit1" style="border: none; border-radius:5px; font-size:17px; padding:10px;"></td>
+        <td><input type="reset" value="Reset" id="reset1" style="border: none; border-radius:5px; font-size:17px; padding:10px;"></td>
+        </tr>
+    </table>
+    </fieldset>
+</form>
+
+<!-- Remove faculty/Student-->
+<form id="Facform" action="addnewfac" method="POST">
+    <fieldset> 
+    <table>
+        <tr>
+        <th>Username</th><td><input type="text" id="usernamefac" name="username"></td>
+        </tr>
+        <tr>
+        <th>Password</th><td><input type="text" id="passwordfac" name="password"></td>
+        </tr>
+        <tr>
+        <th>Email</th><td><input type="text" id="emailfac" name="email"></td>
+        </tr>
+        <tr>
+        <th>Age</th><td><input type="text" id="agefac" name="age"></td>
+        </tr>
+        <tr>
+        <th>Contact number</th><td><input type="text" id="contactfac" name="contact"></td>
+        </tr>
+        <tr>
+        <th>Department</th><td><input type="text" id="deptfac" name="dept"></td>
+        </tr>
+        <th></th><td><input type="submit" value="Add" id="submit2" style="border: none; border-radius:5px; font-size:17px; padding:10px;"></td>
+        <td><input type="reset" value="Reset" id="reset2" style="border: none; border-radius:5px; font-size:17px; padding:10px;"></td>
+        </tr>
+    </table>
+    </fieldset>
+</form>
+<!-- Edit faculty/Student-->
+</center>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="admin.js"></script>
+<script>
+$(document).ready(function(){
+  $("#stud").click(function(){
+    $("#Facform").hide();
+     $("#Studform").show();
+  });
+  $("#fac").click(function(){
+    $("#Facform").show();
+     $("#Studform").hide();
+  });
+});
+</script>
+</body>
+</html>            
+     

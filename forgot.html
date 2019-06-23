@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forgot Password</title>
+	<link rel="stylesheet" type="text/css" href="forgot.css">
+	<script src="script.js"></script>
+</head>
+<body>
+    <div class="header" id="myHeader">
+        <h1 class = "pageheading">Leave Management System</h1>
+    </div>
+   
+
+	 <div>
+<h2 id = "forgotheading" class = "align">Forgot your password?</h2>
+
+<!-- <h2 class = "align"> let us help you</h2> -->
+<<form action="/forgot" method="POST" onsubmit="return validation()">
+	<center>
+	<table>	
+		<tr>
+			<td>
+				<label for="input-mail" >Username</label>
+                <span id = "emailid1" class = "hide" > </span> 
+			</td>
+ 			<td>
+ 				<input type="text" id="email" name ="username" class = "form-control" placeholder="Username">
+ 				<span id = "emailid" > </span> 
+ 			</td>	
+		</tr>
+		
+		<tr>
+			<td>
+				<label for="hint">Hint Question</label>
+                <span id = "hints1" class = "hide"  > </span>
+			</td>
+		
+			<td> 
+				<select id="hint" name="hintss">
+                	<option value="null">Select Hint Question</option>
+                	<option value="1">What is your pet name?</option>
+                	<option value="2">Which site do you visit the least?</option>
+                	<option value="3">What is your favourite color?</option>
+                	<option value="4">What was your mother's maiden name?</option>
+                	<option value="5">Where did you go for pre-school?</option>                                
+              	</select>
+                    <span id = "hints" > </span>
+        	</td>
+    	</tr>
+    	<tr>
+    		<td><label for="input-name">Answer</label>  <span id = "username1" class = "hide" > </span></td>
+    		<td><input type="text" id="user" placeholder="Your Answer">
+    			    		<span id = "username" > </span>
+    		</td>
+
+    	</tr>
+    	<tr>
+    		<td><label >New Password</label> <span id = "password1" class = "hide" > </span> </td>
+    		<td><input type="password"  placeholder="Password" id="pass" name="new_pass">
+    				<span id = "passwordn" > </span>
+    		</td>
+    	</tr>
+    	<tr>
+    		<td><label >Re-type Password</label> <span id = "conpassword1" class = "hide" > </span></td>
+    		<td><input type="password" placeholder="Re-type Password" id="conpass">
+    			<span id = "conpassword" > </span>
+    		</td>
+    	</tr>	
+	</table>
+	</center>
+	<center>
+	<button type="reset" value="Reset" id = "Resetbutton">Reset</button>
+
+    <input type="submit" name="submit" value="Submit" id = "Submitbutton">
+
+    	</center>
+
+</form>
+<script src="script.js"></script>
+
+ </div>
+</body>
+</html>

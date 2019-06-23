@@ -1,0 +1,84 @@
+html {
+	overflow-y: scroll;
+}
+
+.welcome{
+        text-align: center;
+        font-size: 15;
+        }
+
+.header {
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        border-style: groove;
+        height: 80px;
+        width: 100%;
+        position: fixed;
+        background: black;
+        color: white;
+        }
+
+.header *{
+        text-align: center;
+        vertical-align: middle;
+        }
+
+
+.align{
+	  text-align: center;
+	  
+	}
+
+#forgotheading
+{
+	padding-top: 100px;
+}
+
+table{
+
+  padding: 50px;
+  border: 2px solid black;
+  
+}
+
+#Submitbutton{
+	font-size: 17px;
+	margin-top: 20px;
+    width: 125px;
+    height: 30px;
+}
+
+#Resetbutton{
+    font-size: 17px;
+    margin-top: 20px;
+    width: 125px;
+    height: 30px;
+}
+
+
+
+td{
+	width: 170px;
+	height: 50px;
+	font-size: 20px;
+}
+
+input{
+	width: 300px;
+}
+
+select{
+	width: 300px;
+}
+
+span{
+	color: red;
+	font-weight: bold;
+}
+
+.hide
+{
+      opacity: 0;
+}

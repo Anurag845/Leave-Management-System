@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <link rel="stylesheet" type="text/css" href="change.css">
+
+</head>
+
+<body>
+
+    <div class="header" id="myHeader">
+        <h1>Leave Management System</h1>
+    </div>
+
+    <div class="nav">
+
+    <ul>
+        <li>
+            <div class="img">
+                <img src="myaccount.png" alt="Profile Picture" height="60" width="60">
+            </div>
+        </li>
+        <li><a href="dashboard_student">Dashboard</a></li>
+        <li><a href="apply_page_student.html">Apply for Leave</a></li>
+        <li><a href="/history_student">Leave History</a></li>
+        <li><a href="/change_student">Change Password</a></li>
+        <li><a href="login.html">Sign Out</a></li>
+    </ul>
+
+    </div>
+
+    <div class="content">  
+
+    <center>
+    
+    <h2 id="changeheading">Change Password</h2> 
+        <div class="test">
+
+        <form action="/change_pass" method="POST">
+            <table>
+            <tr>
+                <td><label>Current Password</label></td>
+                <td><input type="text" name="current_pass" placeholder="Current Password"></td>
+                <span><%=change_pass.cpass_error%></span>
+            <tr>
+                <td><label>New Password</label></td>
+                <td><input type="Password" name="new_pass" placeholder="New Password"></td>
+            </tr>
+            <tr>
+                <td><label>Confirm New Password</label></td>
+                <td><input type="Password" name="" placeholder="New Password"></td>
+                <span><%=change_pass.cpass_status%></span>
+            </tr>
+            </table>
+    
+        <button type="reset" value="Reset" id = "Resetbutton">Reset</button>
+        <input type="submit" name="submit" value="Submit" id = "Submitbutton">
+    
+        </form>
+    </center> 
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+function validation(){
+
+	var email = document.getElementById('email').value;
+	var user = document.getElementById('user').value; /* Hint Question Answer span id = "username" */
+	var pass = document.getElementById('pass').value;
+	var conpass = document.getElementById('conpass').value;
+
+
+
+	if(email == ""){
+		document.getElementById('emailid').innerHTML = "Please fill the email field" ;
+		document.getElementById('emailid1').innerHTML = "Please fill the email field" ;
+		return false;
+	}
+	if(email.indexOf('@') <= 0 ){
+	document.getElementById('emailid').innerHTML =" Please enter a vaid Email Id";
+	document.getElementById('emailid1').innerHTML = "Please fill the email field" ;
+	return false;
+	}
+
+	if((email.charAt(email.length-4)!='.') && (email.charAt(email.length-3)!='.')){
+		document.getElementById('emailid').innerHTML =" Please enter a vaid Email Id";
+		document.getElementById('emailid1').innerHTML = "Please fill the email field" ;
+		return false;
+	}
+    document.getElementById('emailid').innerHTML ="";
+
+	
+	// slecting dropdown value
+
+ 	var ddl = document.getElementById("hint");
+ 	var selectedValue = ddl.options[ddl.selectedIndex].value;
+    if (selectedValue == "null")
+   {
+    document.getElementById('hints').innerHTML =" Please select a hint question";
+    document.getElementById('hints1').innerHTML =" Please hint question";
+	return false;
+   }
+
+    document.getElementById('hints').innerHTML ="";
+    document.getElementById('hints1').innerHTML ="";
+
+    // Answer to hint question
+
+	if(user == ""){
+		document.getElementById('username').innerHTML = "Please fill the answer field" ; /*Your Answer*/
+		document.getElementById('username1').innerHTML = "Please fill the answer field" ;
+
+		return false;
+	}
+	if(user.length <=2)
+	{	
+		document.getElementById('username').innerHTML = "Answer length must be greater than 2" ; /*Your Answer*/
+		document.getElementById('username1').innerHTML = "Please fill the answer field" ;
+		return false;
+	}
+	if(!isNaN(user))
+	{
+				document.getElementById('username').innerHTML = "Only charaacters are allowed" ; /*Your Answer*/
+				document.getElementById('username1').innerHTML = "Please fill the answer field" ;
+		return false;
+	}
+     document.getElementById('username').innerHTML = "" ; /*Your Answer*/
+     document.getElementById('username1').innerHTML = "" ;
+
+
+
+	if(pass == "")
+	{
+		document.getElementById('password').innerHTML = "Please fill the Password field" ;
+		document.getElementById('password1').innerHTML = "Please fill the Password field" ;
+		return false;
+	}
+	if(pass.length <=5)
+	{
+		document.getElementById('password').innerHTML = "Password length should be greater than 5" ;
+		document.getElementById('password1').innerHTML = "Please fill the Password field" ;
+		return false;		
+	}
+	document.getElementById('password').innerHTML = "" ;
+	document.getElementById('password1').innerHTML = "" ;
+
+
+	if(conpass == ""){
+		document.getElementById('conpassword').innerHTML = "Please fill the Confirm Password field" ;
+		document.getElementById('conpassword1').innerHTML = "Please fill the Confirm Password field" ;
+		return false;
+	}
+
+	if(pass!=conpass)
+	{
+		document.getElementById('conpassword').innerHTML = "Password are not matching" ;
+		document.getElementById('conpassword1').innerHTML = "Please fill the Confirm Password field" ;
+		return false;
+	}
+	//document.getElementById('conpassword').innerHTML = "" ;
+
+
+
+}

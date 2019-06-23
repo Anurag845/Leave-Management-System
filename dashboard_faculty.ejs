@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <link rel="stylesheet" type="text/css" href="dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="header" id="myHeader">
+        <h1>Leave Management System</h1>
+    </div>
+
+    <div class="nav">
+
+    <ul id="navigation">
+        <li>
+            <div class="img">
+            	<center>
+                <img src="myaccount.png" alt="Profile Picture" height="60" width="60">
+                </center>
+            </div>
+        </li>
+        <li><a href="/dashboard_faculty">Dashboard</a></li>
+        <li><a href="/approveleaves">Approve Leaves</a></li>
+        <li><a href="apply_page_faculty.html">Apply for Leave</a></li>
+        <li><a href="/history_faculty">Leave History</a></li>
+        <li><a href="change_faculty.html">Change Password</a></li>
+        <li><a href="login.html">Sign Out</a></li>
+    </ul>
+
+    </div>
+
+    <div class="content">
+
+        <h2 style="text-align:center;">Dashboard</h2>
+        <center>
+    <section style="border:3px solid #CCC;width:50%;">
+    <h1>Welcome</h1>
+    <ul style="list-style-type:none" id="info">
+        <li>Email:<%=user.email%></li>
+        <li>Age:<%=user.age%></li>
+        <li>Contact number:<%=user.contact%></li>
+    </ul>
+    </section>
+    </center>
+    </div>    
+
+</body>
+</html>

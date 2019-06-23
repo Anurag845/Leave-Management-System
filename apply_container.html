@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <style>
+
+        .title {
+            text-align: center;
+        }
+
+        .container {
+            margin-top: 20px;
+            width: 50%;
+            padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form_element label {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .form_element select, .form_element input {
+            margin: 5px;
+            float: right;
+            width: 30%;
+        }
+
+        textarea {
+            margin: 5px;
+            float: right;
+        }
+
+        .txtarea {
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .form_element select {
+            padding: 4px;
+        }
+
+        #s_date, #e_date, #no_days, #l_date, #reason, #address, #phone_no {
+            display: none;
+        }
+
+        #adjust_table {
+            display: none;
+        }
+
+        table {
+            margin-top: 30px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table td,th {
+            text-align: start;
+            padding: 5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h2 class = "title">
+        Leave Application
+    </h2>
+
+    <div class="container">
+        <form>
+
+            <div class="form_element">
+                <label for="type_of_leave">
+                    Select Type of Leave
+                </label>
+                
+                <select id = "type_of_leave">
+                    <option label="CL"></option>
+                    <option label="ML"></option>
+                    <option label="EL"></option>
+                    <option label="CD"></option>
+                    <option label="C Off"></option>
+                    <option label="Other"></option>
+                </select>
+            </div>
+
+            <div class="form_element">
+                    <label for="duration">
+                        Duration of leave
+                    </label>
+    
+                    <select id="duration" onchange="showDiv(this)">
+                        <option label="Select duration" value=""></option>
+                        <option label="Half Day" value="half_day"></option>
+                        <option label="Full Day" value="full_day"></option>
+                        <option label="More than one day" value="more_day"></option>
+                    </select>
+            </div>
+
+            <div class="form_element" id="l_date">
+                <label for="date">
+                    Select date of leave
+                </label>
+                    
+                <input id="date" type="date">
+        
+            </div>    
+
+            <div class="form_element" id="s_date">
+                <label for="from_date">
+                    Select starting date
+                </label>
+                
+                <input id="from_date" type="date">
+    
+            </div>
+
+            <div class="form_element" id="e_date">
+                <label for="till_date">
+                    Select ending date
+                </label>
+                
+                <input id="till_date" type="date">
+            </div>
+
+            <div class="form_element" id="no_days">
+                <label for="no_of_days">
+                    Number of Days
+                </label>
+    
+                <p id="no_of_days" hint="No of Days"></p>
+            </div>
+
+            <div class="form_element" id="phone_no">
+                <label for="l_phone">
+                    Leave Phone Number
+                </label>
+                
+                <input id="l_phone" type="number">
+            </div>
+
+            <div id="reason">
+                <label class="txtarea" for="r_text">
+                    Reason for Leave
+                </label>
+        
+                <textarea id="r_text" rows="5" cols="40"></textarea>
+            </div>
+
+            <div id="address">
+                <label class="txtarea" for="l_addr">
+                    Leave Address
+                </label>
+            
+                <textarea id="l_addr" rows="3" cols="40"></textarea>
+            </div>
+
+            <div id="adjust_table">
+
+                <table>
+                    <caption>Adjustment Table</caption>
+                    <tr>
+                        <th>Date</th>
+                        <th>Class</th>
+                        <th>Adjusted with</th>
+                    </tr>
+
+                    <tr>
+                        <td>date</td>
+                        <td>class</td>
+                        <td>replacement</td>
+                        <td><button>Send</button></td>
+                    </tr>
+                </table>
+
+            </div>
+    
+        </form>
+    </div>
+
+    <script>
+
+        function showDiv(elem) {
+            if(elem.value == "half_day") {
+                document.getElementById("s_date").style.display = "none";
+                document.getElementById("e_date").style.display = "none";
+                document.getElementById("no_days").style.display = "none";
+                document.getElementById("l_date").style.display = "block";
+                document.getElementById("reason").style.display = "block";
+                document.getElementById("address").style.display = "block";
+                document.getElementById("phone_no").style.display = "block";
+                document.getElementById("adjust_table").style.display = "block";
+            }
+            else if(elem.value == "full_day") {
+                document.getElementById("s_date").style.display = "none";
+                document.getElementById("e_date").style.display = "none";
+                document.getElementById("no_days").style.display = "none";
+                document.getElementById("l_date").style.display = "block";
+                document.getElementById("reason").style.display = "block";
+                document.getElementById("address").style.display = "block";
+                document.getElementById("phone_no").style.display = "block";  
+                document.getElementById("adjust_table").style.display = "block";           
+            }
+            else if(elem.value == "more_day") {
+                document.getElementById("l_date").style.display = "none";
+                document.getElementById("s_date").style.display = "block";
+                document.getElementById("e_date").style.display = "block";
+                document.getElementById("no_days").style.display = "block";
+                document.getElementById("reason").style.display = "block";
+                document.getElementById("address").style.display = "block";
+                document.getElementById("phone_no").style.display = "block";
+                document.getElementById("adjust_table").style.display = "block";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

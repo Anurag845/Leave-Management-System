@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="style_leaves.xsl"?>
+<LeaveHistory>
+	<Leave>
+		<Type>Sick Leave</Type>
+		<Duration>4 days</Duration>
+		<Start>10/01/2019</Start>
+		<End>14/01/2019</End>
+		<Status>Approved</Status>
+	</Leave>
+
+	<Leave>
+		<Type>Casual Leave</Type>
+		<Duration>1 day</Duration>
+		<Start>10/11/2018</Start>
+		<End>10/11/2018</End>
+		<Status>Approved</Status>
+	</Leave>
+
+	<Leave>
+		<Type>Casual Leave</Type>
+		<Duration>3 days</Duration>
+		<Start>05/09/2018</Start>
+		<End>07/09/2018</End>
+		<Status>Dispproved</Status>
+	</Leave>
+
+	<Leave>
+		<Type>Official Leave</Type>
+		<Duration>2 days</Duration>
+		<Start>02/08/2018</Start>
+		<End>03/08/2018</End>
+		<Status>Approved</Status>
+	</Leave>
+</LeaveHistory>

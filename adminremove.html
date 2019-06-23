@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <link rel="stylesheet" type="text/css" href="admin.css">
+
+</head>
+
+<body>
+
+    <div class="header" id="myHeader">
+        <h1>Leave Management System</h1>
+    </div>
+
+    <div class="nav">
+
+    <ul>
+        <li>
+            <div class="img">
+                <img src="myaccount.png" alt="Profile Picture" height="80" width="80">
+            </div>
+        </li>
+        <li><a href="admin.html">Add</a></li>
+        <li><a href="adminremove.html">Remove</a></li>
+        <li><a href="login.html">Sign Out</a></li>
+    </ul>
+
+    </div>
+
+
+<div class="content">
+<center>
+<input type="radio" name="type" id="stud" value="Student" checked>Student<input type="radio" name="type" id="fac" value="Faculty">Faculty
+
+<br><br>
+<!-- Add faculty/Student-->
+<form id="Studform" action="removestud" method="POST">
+    <fieldset >
+    <table>
+        <tr>
+        <th>Username</th><td><input type="text" id="username" name="username"></td>
+        </tr>
+        
+        <tr>
+        <th></th><td><input type="submit" value="Remove" id="submit1" style="border: none; border-radius:5px; font-size:17px; padding:10px;"></td>
+        <td><input type="reset" value="Reset" id="reset1" style="border: none; border-radius:5px; font-size:17px; padding:10px;"></td>
+        </tr>
+    </table>
+    </fieldset>
+</form>
+
+<!-- Remove faculty/Student-->
+<form id="Facform" action="removefac" method="POST">
+    <fieldset>
+    <table>
+        <tr>
+        <th>Username</th><td><input type="text" id="usernamefac" name="usernamefac"></td>
+        </tr>
+        <th></th><td><input type="submit" value="Remove" id="submit2" style="border: none; border-radius:5px; font-size:17px; padding:10px;"></td>
+        <td><input type="reset" value="Reset" id="reset2" style="border: none; border-radius:5px; font-size:17px; padding:10px;"></td>
+        </tr>
+    </table>
+    </fieldset>
+</form>
+<!-- Edit faculty/Student-->
+</center>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="adminremove.js"></script>
+<script>
+$(document).ready(function(){
+  $("#stud").click(function(){
+    $("#Facform").hide();
+     $("#Studform").show();
+  });
+  $("#fac").click(function(){
+    $("#Facform").show();
+     $("#Studform").hide();
+  });
+});
+</script>
+</body>
+</html>            
